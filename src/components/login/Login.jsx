@@ -1,11 +1,17 @@
-import Logo from "../../assets/Tela Login/logo-ws.png"
-import styles from "./Login.module.scss" 
+import { useNavigate } from "react-router-dom";
+import Logo from "../../assets/Tela Login/logo-ws.png";
+import styles from "./Login.module.scss";
 
 function Login() {
+  const navigate = useNavigate(); //Iniciando o hook useNavigate
+
+  const irParaReembolsos = () => {
+    navigate("/reembolsos");
+  };
+
   return (
     <main>
-      <section className={styles.containerImagem}>        
-      </section>
+      <section className={styles.containerImagem}></section>
 
       <section className={styles.containerForm}>
         <img src={Logo} alt="Logo da Wilson sons" />
@@ -19,15 +25,13 @@ function Login() {
           <a href="">Esqueci minha senha</a>
 
           <div>
-            <button className={styles.buttonEntrar}>Entrar</button>
+            <button onClick={irParaReembolsos} className={styles.buttonEntrar}>  
+              Entrar
+            </button>
             <button className={styles.buttonCriar}>Criar conta</button>
           </div>
-
         </form>
-
-
       </section>
-
     </main>
   );
 }
