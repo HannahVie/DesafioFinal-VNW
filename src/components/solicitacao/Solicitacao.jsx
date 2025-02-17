@@ -1,7 +1,9 @@
+import NavBar from "../navbar/NavBar.jsx"
+import styles from "./Solicitacao.module.scss"
 function Solicitacao(){
     return(
         <>
-        <h2>Sou o componente solicitação</h2>
+       <NavBar />
         </>
     )
 }

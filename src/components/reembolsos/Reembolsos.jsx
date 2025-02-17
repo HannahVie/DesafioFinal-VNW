@@ -4,17 +4,19 @@ import Solicitar from "../../assets/Dashboard/Solicitar - Reembolso.png";
 import Analise from "../../assets/Dashboard/Análises.png";
 import Historico from "../../assets/Dashboard/Solicitar - Histórico.png";
 import NumeroAnalises from "../../assets/Dashboard/N-Análises.png";
-import NumeroAprovados from "../../assets/Dashboard/N-Aprovados.png"
-import NumeroRejeitados from "../../assets/Dashboard/N-Rejeitados.png"
-import NumeroSolicitados from "../../assets/Dashboard/N-Solicitados.png"
-
-
-
+import NumeroAprovados from "../../assets/Dashboard/N-Aprovados.png";
+import NumeroRejeitados from "../../assets/Dashboard/N-Rejeitados.png";
+import NumeroSolicitados from "../../assets/Dashboard/N-Solicitados.png";
 import styles from "./Reembolsos.module.scss";
+import NavBar from "../navbar/NavBar.jsx";
 
 function Reembolsos() {
   return (
-    <div>
+    
+    <div className={styles.containerReembolsos}>
+      <NavBar />
+
+      <div>
       <header>
         <img src={Home} alt="Casinha da header" />
         <img src={Seta} alt="Setinha da header" />
@@ -49,7 +51,7 @@ function Reembolsos() {
 
         <section className={styles.containerStatus}>
           <div>
-            <img className={styles.imgSolicidades} src={NumeroSolicitados} alt="" />
+            <img className={styles.imgSolicitados} src={NumeroSolicitados} alt="" />
             <h4>182</h4>
             <p>Solicitados</p>
           </div>
@@ -74,6 +76,7 @@ function Reembolsos() {
 
         </section>
       </main>
+      </div>
     </div>
   );
 }
