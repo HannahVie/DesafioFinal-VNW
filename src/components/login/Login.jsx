@@ -18,7 +18,7 @@ function Login() {
         <h1>Boas vindas ao Novo Portal SISPAR</h1>
         <p>Sistema de Emissão de Boletos e Parcelamento</p>
 
-        <form action="">
+        <form className={styles.formLogin}>
           <input type="email" name="email" id="email" placeholder="Email" />
           <input type="password" name="senha" id="senha" placeholder="Senha" />
 
