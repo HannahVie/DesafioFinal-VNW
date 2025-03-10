@@ -28,7 +28,9 @@ function Login() {
             <button onClick={irParaReembolsos} className={styles.buttonEntrar}>  
               Entrar
             </button>
-            <button className={styles.buttonCriar}>Criar conta</button>
+            <button className={styles.buttonCriar}>
+              Criar conta
+            </button>
           </div>
         </form>
       </section>
