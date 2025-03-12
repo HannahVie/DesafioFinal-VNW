@@ -7,7 +7,7 @@ import NumeroAnalises from "../../assets/Dashboard/N-Análises.png";
 import NumeroAprovados from "../../assets/Dashboard/N-Aprovados.png";
 import NumeroRejeitados from "../../assets/Dashboard/N-Rejeitados.png";
 import NumeroSolicitados from "../../assets/Dashboard/N-Solicitados.png";
-import Nuvem from "../../assets/Dashboard/Nuvem.png";
+import nuvem from "../../assets/Dashboard/nuvem.png";
 import styles from "./Reembolsos.module.scss";
 import NavBar from "../navbar/NavBar.jsx";
 import { useNavigate } from "react-router-dom";
@@ -80,7 +80,7 @@ function Reembolsos() {
           </section>
 
           <div className={styles.sistema}>
-            <img src={Nuvem} alt="nuvem" />
+            <img src={nuvem} alt="nuvem" />
             <p>Sistema atualizado</p>
           </div>
 
