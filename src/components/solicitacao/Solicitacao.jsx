@@ -4,6 +4,11 @@ import Home from "../../assets/Dashboard/home.png";
 import Seta from "../../assets/Dashboard/Vector.png";
 import Lixeira from "../../assets/Solicitacao/lixeira.png"
 import Motivo from "../../assets/Solicitacao/motivo.png"
+import Deletar from "../../assets/Solicitacao/deletar.png"
+import Check from "../../assets/Solicitacao/check.png"
+import X from "../../assets/Solicitacao/x.png"
+
+
 function Solicitacao() {
   return (
     <div className={styles.layoutSolicitacao}>
@@ -128,7 +133,9 @@ function Solicitacao() {
               <div className={styles.botoes}>
                 <button className={styles.botaoSalvar}> + Salvar</button>
 
-                <button className={styles.botaoDeletar}> Del</button>
+                <button className={styles.botaoDeletar}>
+                  <img src={Deletar} alt="Deletar" />
+                </button>
               </div>
             </div>
           </form>
@@ -165,16 +172,70 @@ function Solicitacao() {
             <tbody>
               <tr>
                 <td> <img src={Lixeira} alt="ícone da lixeira" /></td>
-                <td> Cleitinho Caramelo</td>
-                <td> Mototáxi</td>
-                <td> 24</td>
+                <td> Vitor Carvalho Flores</td>
+                <td> WSS001</td>
+                <td> 329456</td>
+                <td> 08/01/2025</td>
+                <td> <img src={Motivo} alt="" /></td>
+                <td> Desp. de viagem</td>
+                <td> 1100110002 - FIN...</td>
+                <td> 0003</td>
+                <td> 002</td>
+                <td> 001</td>
+                <td> BRL</td>
+                <td> 20Km</td>
+                <td> 0.50</td>
+                <td> 600.00</td>
+                <td> 1500.00</td>
+              </tr>
+              <tr>
+                <td> <img src={Lixeira} alt="ícone da lixeira" /></td>
+                <td> Wanessa Portugol</td>
+                <td> WSS002</td>
+                <td> 4500</td>
                 <td> 21/02/2025</td>
                 <td> <img src={Motivo} alt="" /></td>
                 <td> Alimentação</td>
-                <td> 200.00</td>
+                <td> 1100109002 - FIN...</td>
                 <td>1</td>
                 <td>0</td>
-                <td>nada</td>
+                <td>001</td>
+                <td>BRL</td>
+                <td>20km</td>
+                <td>0.50</td>
+                <td>600.00</td>
+                <td>1500.00</td>
+              </tr>
+              <tr>
+                <td> <img src={Lixeira} alt="ícone da lixeira" /></td>
+                <td> Wesley Cacipriano</td>
+                <td> WSS003</td>
+                <td> 24</td>
+                <td> 21/02/2025</td>
+                <td> <img src={Motivo} alt="" /></td>
+                <td> Combustivel</td>
+                <td> 1100110101 - FIN</td>
+                <td>1</td>
+                <td>0</td>
+                <td>001</td>
+                <td>BRL</td>
+                <td>20km</td>
+                <td>0.50</td>
+                <td>600.00</td>
+                <td>1500.00</td>
+              </tr>
+              <tr>
+                <td> <img src={Lixeira} alt="ícone da lixeira" /></td>
+                <td> Mirella da Silva Sauro</td>
+                <td> WSS004</td>
+                <td> 24</td>
+                <td> 21/02/2025</td>
+                <td> <img src={Motivo} alt="" /></td>
+                <td> Viagem Admin</td>
+                <td> 1100110101 - FIN</td>
+                <td>1</td>
+                <td>0</td>
+                <td>001</td>
                 <td>BRL</td>
                 <td>20km</td>
                 <td>0.50</td>
@@ -183,6 +244,25 @@ function Solicitacao() {
               </tr>
             </tbody>
           </table>
+
+          <div className={styles.buttons}>
+            <div className={styles.inputTotal}>
+              <label htmlFor="">Total Faturado</label>
+              <input type="number" name="" id="" placeholder="0,00"/>
+            </div>
+            <div className={styles.inputTotal}>
+              <label htmlFor="">Total Despesa</label>
+              <input type="number" name="" id="" placeholder="0,00"/>
+            </div>
+            <button className={styles.buttonEnviar}>
+              <img src={Check} alt="Enviar" />
+              Enviar para Análise
+            </button>
+            <button className={styles.buttonCancelar}>
+              <img src={X} alt="Cancelar" />
+              Cancelar Solicitação
+            </button>
+          </div>
         </main>
       </div>
     </div>
