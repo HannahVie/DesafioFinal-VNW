@@ -365,6 +365,7 @@ function Solicitacao() {
             </tbody>
           </table>
 
+
           <div className={styles.buttons}>
             <div className={styles.inputTotal}>
               <label htmlFor="">Total Faturado</label>
