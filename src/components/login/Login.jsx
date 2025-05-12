@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Logo from "../../assets/Tela Login/logo-ws.png";
 import styles from "./Login.module.scss";
+import api from "../../services/Api";
+import { useState } from "react";
 
 function Login() {
   const navigate = useNavigate(); //Iniciando o hook useNavigate
@@ -8,6 +10,27 @@ function Login() {
   const irParaReembolsos = () => {
     navigate("/reembolsos");
   };
+
+  const [email,setEmail] = useState("")
+  const [senha, setSenha] = useState("")
+
+  const fazerLogin = async (e) => {
+    e.preventDefault()
+
+    try{
+      const resposta = await api.post("/colaborador/login", {
+        "email": email,
+        "senha": senha
+      })
+
+      console.log(resposta.data)
+
+    }catch(error){
+      console.log("Erro ao fazer login", error)
+      alert("Erro no login")
+    }
+  }
+
 
   return (
     <main>
@@ -19,16 +42,34 @@ function Login() {
         <p>Sistema de Emissão de Boletos e Parcelamento</p>
 
         <form className={styles.formLogin}>
-          <input type="email" name="email" id="email" placeholder="Email" />
-          <input type="password" name="senha" id="senha" placeholder="Senha" />
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="Email"
+            value = {email} 
+            onChange={(e) => setEmail(e.target.value)}  
+          />
+          <input 
+            type="password" 
+            name="senha" 
+            id="senha" 
+            placeholder="Senha" 
+            value = {senha}
+            onChange={(e) => setSenha(e.target.value)}
+          />
 
           <a href="">Esqueci minha senha</a>
 
           <div>
-            <button onClick={irParaReembolsos} className={styles.buttonEntrar}>  
+            <button 
+              onClick={fazerLogin} 
+              className={styles.buttonEntrar}
+            >  
               Entrar
             </button>
-            <button className={styles.buttonCriar}>
+            <button 
+              className={styles.buttonCriar}>
               Criar conta
             </button>
           </div>
