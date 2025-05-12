@@ -26,7 +26,7 @@ function Login() {
       console.log(resposta.data)
 
     }catch(error){
-      console.log("Erro ao fazer login", error)
+      console.log("Erro ao fazer login", error.response?.data || error.message)
       alert("Erro no login")
     }
   }
