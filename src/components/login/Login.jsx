@@ -12,26 +12,47 @@ function Login() {
     navigate("/reembolsos");
   };
 
-  const [email,setEmail] = useState("")
+  const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
 
+  // const fazerLogin = async (e) => {
+  //   e.preventDefault()
+
+  //   try{
+  //     const resposta = await api.post("/colaborador/login", {
+  //       "email": email,
+  //       "senha": senha
+  //     })
+
+  //     console.log(resposta.data)
+  //     irParaReembolsos();
+
+  //   }catch(error){
+  //     console.log("Erro ao fazer login", error.response?.data || error.message)
+  //     alert("Erro no login")
+  //   }
+  // }
+
   const fazerLogin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    try{
+    console.log("Iniciando login...");
+
+    try {
       const resposta = await api.post("/colaborador/login", {
-        "email": email,
-        "senha": senha
-      })
+        email,
+        senha,
+      });
 
-      console.log(resposta.data)
-      irParaReembolsos();
+      console.log("Resposta da API:", resposta);
 
-    }catch(error){
-      console.log("Erro ao fazer login", error.response?.data || error.message)
-      alert("Erro no login")
+      alert("Login OK!");
+      navigate("/reembolsos");
+    } catch (error) {
+      console.log("Erro ao fazer login", error.response?.data || error.message);
+      alert("Erro no login");
     }
-  }
+  };
 
 
   return (
@@ -44,33 +65,33 @@ function Login() {
         <p>Sistema de Emissão de Boletos e Parcelamento</p>
 
         <form className={styles.formLogin}>
-          <input 
-            type="email" 
-            name="email" 
-            id="email" 
+          <input
+            type="email"
+            name="email"
+            id="email"
             placeholder="Email"
-            value = {email} 
-            onChange={(e) => setEmail(e.target.value)}  
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
-          <input 
-            type="password" 
-            name="senha" 
-            id="senha" 
-            placeholder="Senha" 
-            value = {senha}
+          <input
+            type="password"
+            name="senha"
+            id="senha"
+            placeholder="Senha"
+            value={senha}
             onChange={(e) => setSenha(e.target.value)}
           />
 
           <a href="">Esqueci minha senha</a>
 
           <div>
-            <button 
-              onClick={fazerLogin} 
+            <button
+              onClick={fazerLogin}
               className={styles.buttonEntrar}
-            >  
+            >
               Entrar
             </button>
-            <button 
+            <button
               className={styles.buttonCriar}>
               Criar conta
             </button>
