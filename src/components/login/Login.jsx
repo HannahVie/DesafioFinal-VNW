@@ -47,7 +47,7 @@ function Login() {
       console.log("Resposta da API:", resposta);
 
       alert("Login OK!");
-      navigate("/reembolsos");
+      irParaReembolsos();
     } catch (error) {
       console.log("Erro ao fazer login", error.response?.data || error.message);
       alert("Erro no login");
@@ -64,7 +64,7 @@ function Login() {
         <h1>Boas vindas ao Novo Portal SISPAR</h1>
         <p>Sistema de Emissão de Boletos e Parcelamento</p>
 
-        <form className={styles.formLogin}>
+        <form className={styles.formLogin} onSubmit={fazerLogin}>
           <input
             type="email"
             name="email"
@@ -86,7 +86,7 @@ function Login() {
 
           <div>
             <button
-              onClick={fazerLogin}
+              type="submit"
               className={styles.buttonEntrar}
             >
               Entrar
