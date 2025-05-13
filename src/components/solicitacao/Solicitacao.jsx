@@ -77,21 +77,42 @@ function Solicitacao() {
     setDespesa("");
   };
 
-  const [foiEnviado, setFoiEnviado] = useState(false) 
+const [foiEnviado, setFoiEnviado] = useState(false) 
 
-  const enviarParaAnalise = async () => {
-   
-    try {
-      const response = await Api.post("/refunds/new", dadosReembolso);
-      console.log("Resposta da Api", response);
-      alert("Reembolso solicitado com sucesso!");
-      setFoiEnviado(true);
+const enviarParaAnalise = async () => {
+  try {
+    for (const reembolso of dadosReembolso) {
+      const objeto = {
+        colaborador: reembolso.colaborador,
+        empresa: reembolso.empresa,
+        num_prestacao: reembolso.nPrestacao,
+        descricao: reembolso.descricao,
+        data: reembolso.data,
+        tipo_reembolso: reembolso.tipoReembolso,
+        centro_custo: reembolso.centroCusto,
+        ordem_interna: reembolso.ordemInterna,
+        divisao: reembolso.divisao,
+        pep: reembolso.pep,
+        moeda: reembolso.moeda,
+        distancia_km: reembolso.distanciaKm,
+        valor_km: reembolso.valorKm,
+        valor_faturado: reembolso.valorFaturado,
+        despesa: reembolso.despesa,
+        id_colaborador: 1,
+        status: "EM ANÁLISE" // Ou deixe o backend definir um default
+      };
 
-    } catch (error) {
-      console.log("Erro ao enviar", error);
+      await Api.post("/reembolso/solicitar", objeto);
     }
 
-  };
+    alert("Todos os reembolsos foram enviados com sucesso!");
+    setFoiEnviado(true);
+
+  } catch (error) {
+    console.error("Erro ao enviar reembolso:", error);
+    alert("Erro ao enviar um ou mais reembolsos.");
+  }
+};
 
   useEffect(()=>{
     if (foiEnviado) {
