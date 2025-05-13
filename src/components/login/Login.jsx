@@ -45,9 +45,8 @@ function Login() {
       });
 
       console.log("Resposta da API:", resposta);
-
-      alert("Login OK!");
       irParaReembolsos();
+      
     } catch (error) {
       console.log("Erro ao fazer login", error.response?.data || error.message);
       alert("Erro no login");
