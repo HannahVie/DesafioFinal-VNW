@@ -8,6 +8,7 @@ function Login() {
   const navigate = useNavigate(); //Iniciando o hook useNavigate
 
   const irParaReembolsos = () => {
+    console.log("Login bem-sucedido! Redirecionando para /reembolsos...");
     navigate("/reembolsos");
   };
 
@@ -24,6 +25,7 @@ function Login() {
       })
 
       console.log(resposta.data)
+      irParaReembolsos();
 
     }catch(error){
       console.log("Erro ao fazer login", error.response?.data || error.message)
