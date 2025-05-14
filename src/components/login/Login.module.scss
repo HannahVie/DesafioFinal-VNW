@@ -1,25 +1,26 @@
 main {
-  display: flex;
+    display: flex;
 }
 
 .containerImagem {
-  //border: solid red;
-  background-image: url("../../assets/Tela\ Login/imagem tela de login.png");
-  height: 100vh;
-  width: 60%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: center;
+    //border: solid red;
+    background-image: url("../../assets/Tela\ Login/imagem tela de login.png");
+    height: 100vh;
+    width: 60%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
 }
 
-.containerForm{
+.containerForm {
     //border: solid blue;
     width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    h1{
+
+    h1 {
         //border: solid red;
         width: 48%;
         font-size: 2rem;
@@ -27,14 +28,15 @@ main {
         font-family: "Inter", serif;
         color: #23282F;
     }
-    p{
+
+    p {
         font-family: "Inter", serif;
         color: #0844C4;
         font-weight: bold;
     }
 }
 
-.formLogin{
+.formLogin {
     //border: solid green;
     display: flex;
     flex-direction: column;
@@ -42,38 +44,190 @@ main {
     align-items: center;
     width: 70%;
     height: 30vh;
-    input{
+
+    input {
         width: 20vw;
         height: 6vh;
         border-radius: 6px;
         padding: 10px;
     }
 
-    div{
+    div {
         //border: solid red;
         padding-top: 25px;
         width: 50%;
         display: flex;
         justify-content: space-around;
 
-        .buttonEntrar{
+        .buttonEntrar {
             background-color: #001A3D;
             width: 6.7vw;
-            height: 7vh ;
+            height: 7vh;
             border-radius: 6px;
             color: white;
             font-weight: bold;
             font-family: "Inter", serif;
         }
 
-        .buttonCriar{
+        .buttonCriar {
             background-color: #00BEDD;
             width: 6.7vw;
-            height: 7vh ;
+            height: 7vh;
             border-radius: 6px;
             color: white;
             font-weight: bold;
             font-family: "Inter", serif;
         }
     }
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+
+    position: relative; // <- necessário para posicionar o botão X corretamente
+    background-color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter", serif;
+
+}
+
+.modal h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    font-weight: bold;
+}
+
+.modalForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .inputGroup {
+        position: relative;
+        width: 100%;
+
+        input {
+            width: 100%;
+            height: 50px; // <--- altura aumentada
+            padding: 0 0.75rem 0 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            left: 0.75rem;
+            transform: translateY(-50%);
+            font-size: 1.2rem; // <--- ícone um pouco maior
+            color: #666;
+        }
+    }
+}
+
+.modalCloseButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.closeButton {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    z-index: 1001;
+}
+
+.modalCloseButton:hover {
+    color: #000;
+}
+
+.modalButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.modalButtons button {
+    flex: 1;
+    padding: 0.6rem;
+    margin: 0 0.25rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    height: 50px; // <-- altura igual à dos inputs
+    transition: background-color 0.3s ease;
+}
+
+.modalButtons button:first-child {
+    background-color: #002f54; // azul escuro
+    color: white;
+}
+
+.modalButtons button:first-child:hover {
+    background-color: #001d36;
+}
+
+.modalButtons button:last-child {
+    background-color: #ccc;
+    color: #333;
+}
+
+.modalButtons button:last-child:hover {
+    background-color: #bbb;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cancelButton {
+    background-color: #ccc;
+    color: #333;
 }
