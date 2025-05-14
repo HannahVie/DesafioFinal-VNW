@@ -1,59 +1,62 @@
-.containerPrincipalSolicitacao{
+.containerPrincipalSolicitacao {
     //border: solid blue;
     width: 95vw;
 }
 
-.headerSolicitacao{
-  //  border: solid red;
+.headerSolicitacao {
+    //  border: solid red;
     display: flex;
     width: 20vw;
 }
 
-.layoutSolicitacao{
+.layoutSolicitacao {
     display: flex;
 }
 
-.mainSolicitacao{
-//border: solid red;
-padding-top: 2vh;
-width: 100%;
-display: flex;
-flex-direction: column;
-position: relative;
-padding-bottom: 70px; /* altura do rodapé */
+.mainSolicitacao {
+    //border: solid red;
+    padding-top: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 70px;
+    /* altura do rodapé */
 
 }
 
-.formSolicitacao{
-width: 100%;
-display: flex;
-justify-content: space-between;
-padding-bottom: 20px;
+.formSolicitacao {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
 }
 
 //Estilização padrão para inputs, textarea, select e label
 
-input, select, textarea{
+input,
+select,
+textarea {
     border-radius: 6px;
     border: solid #CBD4E1 0.8px;
     height: 4vh;
     width: 100%;
 }
 
-label{
+label {
     color: #23282F;
     font-weight: 700;
     font-size: 1rem;
 }
 
-textarea{
+textarea {
     height: 10vh;
 }
 
 //Estilização do grupo 1
 
-.grupo1{
- //border: solid;
+.grupo1 {
+    //border: solid;
     width: 33%;
     height: 25vh;
     display: flex;
@@ -63,29 +66,29 @@ textarea{
 }
 
 
-.inputNome{
-   // border: solid purple;
+.inputNome {
+    // border: solid purple;
     width: 45%;
 }
 
-.inputEmpresa{
-   // border: solid blue;
+.inputEmpresa {
+    // border: solid blue;
     width: 25%;
 }
 
-.inputPrestacao{
-   // border: solid orange;
+.inputPrestacao {
+    // border: solid orange;
     width: 25%;
 }
 
-.inputMotivo{
-   // border: solid green;
+.inputMotivo {
+    // border: solid green;
     width: 100%;
 }
 
 //Estilização da barra vertical
 
-.barraVertical{
+.barraVertical {
     width: 0.1vw;
     border: solid #CBD4E1 1px;
     height: 23vh;
@@ -93,7 +96,7 @@ textarea{
 
 //Estilizção do grupo 2
 
-.grupo2{
+.grupo2 {
     width: 62%;
     height: 25vh;
     //border: solid red;
@@ -103,32 +106,38 @@ textarea{
     align-items: center;
 }
 
-.inputData{
+.inputData {
     //border: solid green;
     width: 25%;
 }
 
-.despesas{
-   // border: solid blue;
+.despesas {
+    // border: solid blue;
     width: 30%;
 }
 
-.centroDeCusto{
+.centroDeCusto {
     //border: solid purple;
     width: 38%;
 }
 
-.ordem, .divisoes, .pep, .distancia{
-   // border: solid orange;
-    width:8%;
+.ordem,
+.divisoes,
+.pep,
+.distancia {
+    // border: solid orange;
+    width: 8%;
 }
 
-.moeda, .valorKm, .valorFaturado, .despesa{
-//border: solid rgb(16, 137, 80);
-width: 11%;
+.moeda,
+.valorKm,
+.valorFaturado,
+.despesa {
+    //border: solid rgb(16, 137, 80);
+    width: 11%;
 }
 
-.botoes{
+.botoes {
     width: 15%;
     //border: solid red;
     display: flex;
@@ -136,45 +145,48 @@ width: 11%;
     justify-content: space-evenly;
 }
 
-.botaoSalvar{
-background-color: #001A3D;
-color: #ffffff;
-width: 5vw;
-height: 32px;
-font-weight: bold;
+.botaoSalvar {
+    background-color: #001A3D;
+    color: #ffffff;
+    width: 5vw;
+    height: 32px;
+    font-weight: bold;
 }
 
-.botaoDeletar{
-background-color: #00BEDD;
-color: #ffffff;
-width: 38px;
-height: 32px;
-padding-top: 4px;
+.botaoDeletar {
+    background-color: #00BEDD;
+    color: #ffffff;
+    width: 38px;
+    height: 32px;
+    padding-top: 4px;
 }
 
 //Estilização da tabela
 
-table{
+table {
     width: 99%;
     border: solid #CBD4E1 0.8px;
     border-collapse: collapse;
 
 }
-th{
+
+th {
     background-color: #F1F4F9;
     font-weight: 400;
     font-size: 1rem;
     height: 6vh;
     color: #23282F;
 }
-td, th{
+
+td,
+th {
     border: solid #CBD4E1 0.8px;
     text-align: center;
     height: 6vh;
     color: #23282F;
 }
 
-.buttons{
+.buttons {
     //border: solid red;
     //padding-top: 50vh;
     border-top: solid #CBD4E1 2px;
@@ -188,12 +200,12 @@ td, th{
     justify-content: end;
     gap: 10px;
 
-    .inputTotal{
+    .inputTotal {
         //border: solid orange;
         width: 8vw;
-     }
+    }
 
-    .buttonEnviar{
+    .buttonEnviar {
         background-color: #001A3D;
         width: 12vw;
         height: 7vh;
@@ -201,23 +213,23 @@ td, th{
         color: white;
         font-weight: bold;
         font-family: "Inter", serif;
-        
-        img{
+
+        img {
             padding-right: 10px;
         }
     }
 
-    .buttonCancelar{
+    .buttonCancelar {
         background-color: #A60B2F;
         width: 12vw;
-        height: 7vh ;
+        height: 7vh;
         border-radius: 6px;
         color: white;
         font-weight: bold;
         font-family: "Inter", serif;
-        
 
-        img{
+
+        img {
             padding-right: 10px;
         }
     }

@@ -41,7 +41,7 @@ function Reembolsos() {
               <h3>Solicitar Reembolso</h3>
             </article>
 
-            <article>
+            <article onClick={() => { navigate("/analises"); }}>
               <img src={Analise} alt="verificar análises" />
               <h3>Verificar análises</h3>
             </article>
